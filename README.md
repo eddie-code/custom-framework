@@ -11,3 +11,8 @@
     - K（key）：键
     - V（Value）：值
     - N（Number）：数值类型
+
+## Service 层代码架子的搭建
+
+- solo 相关类
+- combine 相关类：包含多个 solo 相关类，统一对 controller 提供服务

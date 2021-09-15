@@ -28,6 +28,18 @@ public class HelloServlet extends HttpServlet {
 
 //	Logger log = LoggerFactory.getLogger(HttpServlet.class);
 
+
+	@Override
+	public void init() {
+		System.out.println("初始化Servlet...");
+	}
+
+	@Override
+	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		System.out.println("是我执行了doGet(), this is entry");
+		doGet(req,resp);
+	}
+
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 //		super.doGet(req, resp);
@@ -35,5 +47,10 @@ public class HelloServlet extends HttpServlet {
 		log.debug("String name = " + name);
 		req.setAttribute("name", name);
 		req.getRequestDispatcher("/WEB-INF/jsp/hello.jsp").forward(req, resp);
+	}
+
+	@Override
+	public void destroy() {
+		System.out.println("销毁...");
 	}
 }

@@ -1,9 +1,10 @@
-package com.example.service.combine;
+package com.example.service.combine.impl;
 
 import com.example.pojo.bo.HeadLine;
 import com.example.pojo.bo.ShopCategory;
 import com.example.pojo.dto.MainPageInfoDTO;
 import com.example.pojo.dto.Result;
+import com.example.service.combine.HeadLineShopCategoryCombineService;
 import com.example.service.solo.HeadLineService;
 import com.example.service.solo.ShopCategoryService;
 

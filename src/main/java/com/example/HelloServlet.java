@@ -1,5 +1,10 @@
 package com.example;
 
+import com.example.pojo.bo.HeadLine;
+import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -17,13 +22,17 @@ import java.io.IOException;
  * @date created in 2021-09-14 21:42
  * @modified by
  */
+@Slf4j
 @WebServlet("/hello")
 public class HelloServlet extends HttpServlet {
+
+//	Logger log = LoggerFactory.getLogger(HttpServlet.class);
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 //		super.doGet(req, resp);
 		String name = "Eddie.Lee";
+		log.debug("String name = " + name);
 		req.setAttribute("name", name);
 		req.getRequestDispatcher("/WEB-INF/jsp/hello.jsp").forward(req, resp);
 	}

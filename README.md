@@ -264,3 +264,59 @@ System.setProperty("jdk.proxy.ProxyGenerator.saveGeneratedFiles", "true");
 - 反射+工厂模式的合体,满足开闭原则
 
 > 反射动态生成对象
+
+
+## 自研框架IoC容器的实现
+
+### 框架具备的基本功能
+
+- 解析配置（XML、注解等）
+- 定义和注册对象
+- 注入对象
+- 提供通用的工具类
+
+### IoC容器的实现
+
+创建注解-->提取标记对象-->实现容器-->依赖注入
+
+#### 仿照Spring创建注解
+
+控制层
+```java
+// TYPE只作用域类上
+@Target(ElementType.TYPE)
+// 运行时
+@Retention(RetentionPolicy.RUNTIME)
+public @interface Controller {
+}
+```
+
+业务层
+```java
+// TYPE只作用域类上
+@Target(ElementType.TYPE)
+// 运行时
+@Retention(RetentionPolicy.RUNTIME)
+public @interface Service {
+}
+```
+
+DAO
+```java
+// TYPE只作用域类上
+@Target(ElementType.TYPE)
+// 运行时
+@Retention(RetentionPolicy.RUNTIME)
+public @interface Resipotory {
+}
+```
+
+Bean
+```java
+// TYPE只作用域类上
+@Target(ElementType.TYPE)
+// 运行时
+@Retention(RetentionPolicy.RUNTIME)
+public @interface Component {
+}
+```

@@ -172,3 +172,12 @@ public static void main(String[] args) throws ClassNotFoundException {
 
 
 ![](.README_images/fabdae64.png)
+
+## 自定义注解 + 反射获取属性
+
+- 自定义注解
+    - PersonInfoAnnotation
+    - CourseInfoAnnotation
+    - 作用域 Demo 类   
+- 反射获取作用域 Demo 类上面注解属性打印
+    - AnnotationParser

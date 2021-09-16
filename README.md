@@ -175,9 +175,41 @@ public static void main(String[] args) throws ClassNotFoundException {
 
 ## 自定义注解 + 反射获取属性
 
+格式：
+
+```java
+public @interface 注解名{
+    修饰符 返回值 属性名() 默认值;
+    修饰符 返回值 属性名() 默认值;
+    ...
+}
+```
+
 - 自定义注解
     - PersonInfoAnnotation
     - CourseInfoAnnotation
     - 作用域 Demo 类   
 - 反射获取作用域 Demo 类上面注解属性打印
     - AnnotationParser
+
+### 注解背后底层实现
+
+```java
+System.setProperty("jdk.proxy.ProxyGenerator.saveGeneratedFiles", "true");
+```
+
+或
+
+```java
+-Dsun.misc.ProxyGenerator.saveGeneratedFiles=true
+```
+
+根据上述方式，在src同级目录下会多出com.sum.proxy.*.class
+
+- 注解的工作原理
+    - 通过键值对的形式为注解属性赋值
+    - 编译器检查注解的使用范围，将注解信息写入元素属性表
+    - 运行时 JVM 将 RUNTIME 的所有注解属性取出并最终存入 map 里（单个Class文件内所有的RUNTIME的注解而非整个项目的RUNTIME注解）
+    - 创建AnnotationInvacationHandler实例并传入前面的map
+    - JVM使用JDK动态代理为注解生成动态代理类，并初始化处理器
+    - 调用invoke方法，通过传入方法名返回注解对应的属性值

@@ -213,3 +213,54 @@ System.setProperty("jdk.proxy.ProxyGenerator.saveGeneratedFiles", "true");
     - 创建AnnotationInvacationHandler实例并传入前面的map
     - JVM使用JDK动态代理为注解生成动态代理类，并初始化处理器
     - 调用invoke方法，通过传入方法名返回注解对应的属性值
+
+
+
+## 上述学习对自研框架的意义
+
+### 控制反转 IoC (Inversion of Controller)
+
+- 依托一个类似工厂的 IoC 容器
+- 将对象的创建、依赖关系的管理以及生命周期交由IoC容器管理
+- 降低系统在实现上的复杂性和耦合度,易于扩展,满足开闭原则（软件中的对象（类、模块、方法等），对于扩展是开放的，对于修改是封闭的）
+
+> IOC 是 Spring Core最核心部分，它不是一门技术，只是一种编程思想
+
+#### 造行李箱例子
+
+![](.README_images/d4f57fdc.png)
+
+行李箱构成，但是当轮子发生改变大小时，上层的结构都需要改变，这无疑是不可接受的
+
+##### 传统方式建造行李箱
+
+![](.README_images/be71460b.png)
+
+##### 依赖注入DI实现控制反转
+
+应该是下层依赖上层
+
+![](.README_images/69aaf65b.png)
+
+<br>
+
+![](.README_images/dece8f64.png)
+
+### DI 依赖注入
+
+- 构造方法实现注入
+- setter实现注入
+- 接口实现注入
+- 注解实现注入
+
+#### 依靠倒置原则、IoC、DI、IoC容器的关系
+
+![](.README_images/51b5575b.png)
+
+### IoC容器的优势
+
+- 避免在各处使用new来创建类 ,并且可以做到统一维护
+- 创建实例的时候不需要 了解其中的细节
+- 反射+工厂模式的合体,满足开闭原则
+
+> 反射动态生成对象

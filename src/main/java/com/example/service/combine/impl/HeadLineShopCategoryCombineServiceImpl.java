@@ -7,6 +7,7 @@ import com.example.pojo.dto.Result;
 import com.example.service.combine.HeadLineShopCategoryCombineService;
 import com.example.service.solo.HeadLineService;
 import com.example.service.solo.ShopCategoryService;
+import org.simpleframework.core.annotation.Service;
 
 import java.util.List;
 
@@ -20,6 +21,7 @@ import java.util.List;
  * @date created in 2021-09-15 14:47
  * @modified by
  */
+@Service
 public class HeadLineShopCategoryCombineServiceImpl implements HeadLineShopCategoryCombineService {
 
 	private HeadLineService headLineService;

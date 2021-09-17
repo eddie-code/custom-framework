@@ -3,6 +3,7 @@ package com.example.service.solo.impl;
 import com.example.pojo.bo.HeadLine;
 import com.example.pojo.dto.Result;
 import com.example.service.solo.HeadLineService;
+import org.simpleframework.core.annotation.Service;
 
 import java.util.List;
 
@@ -16,6 +17,7 @@ import java.util.List;
  * @date created in 2021-09-15 14:42
  * @modified by
  */
+@Service
 public class HeadLineServiceImpl implements HeadLineService {
 
     @Override

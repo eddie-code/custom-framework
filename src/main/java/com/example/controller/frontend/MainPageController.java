@@ -3,6 +3,7 @@ package com.example.controller.frontend;
 import com.example.pojo.dto.MainPageInfoDTO;
 import com.example.pojo.dto.Result;
 import com.example.service.combine.HeadLineShopCategoryCombineService;
+import org.simpleframework.core.annotation.Controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -17,6 +18,7 @@ import javax.servlet.http.HttpServletResponse;
  * @date created in 2021-09-15 19:19
  * @modified by
  */
+@Controller
 public class MainPageController {
 
     private HeadLineShopCategoryCombineService headLineShopCategoryCombineService;

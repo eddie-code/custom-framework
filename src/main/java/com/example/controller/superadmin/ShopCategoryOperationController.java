@@ -3,6 +3,7 @@ package com.example.controller.superadmin;
 import com.example.pojo.bo.ShopCategory;
 import com.example.pojo.dto.Result;
 import com.example.service.solo.ShopCategoryService;
+import org.simpleframework.core.annotation.Controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -18,6 +19,7 @@ import java.util.List;
  * @date created in 2021-09-15 19:30
  * @modified by
  */
+@Controller
 public class ShopCategoryOperationController {
 
     private ShopCategoryService shopCategoryService;

@@ -144,4 +144,24 @@ public class ClassUtil {
 		}
 	}
 
+	/**
+	 * 实例化class
+	 *
+	 * @param clazz Class
+	 * @param <T>   class的类型
+	 * @param accessible   是否支持创建出私有class对象的实例
+	 * @return 类的实例化
+	 */
+	public static <T> T newInstance(Class<?> clazz, boolean accessible){
+		try {
+			Constructor constructor = clazz.getDeclaredConstructor();
+			constructor.setAccessible(accessible);
+			return (T)constructor.newInstance();
+		} catch (Exception e) {
+			//log.error("newInstance error", e);
+			System.out.println("newInstance error"+ e);
+			throw new RuntimeException(e);
+		}
+	}
+
 }
